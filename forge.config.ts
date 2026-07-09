@@ -7,6 +7,7 @@ import { MakerDMG } from "@electron-forge/maker-dmg";
 import { VitePlugin } from "@electron-forge/plugin-vite";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
+import { execSync } from "child_process";
 
 const config: ForgeConfig = {
     packagerConfig: {
@@ -25,6 +26,14 @@ const config: ForgeConfig = {
                 teamId: process.env.APPLE_TEAM_ID!,
             },
         }),
+    },
+    hooks: {
+        postPackage: async (_config, options) => {
+            if (process.platform === "darwin" && !process.env.APPLE_ID) {
+                const appPath = `${options.outputPaths[0]}/Dexcom.app`;
+                execSync(`codesign --force --deep -s - "${appPath}"`);
+            }
+        },
     },
     rebuildConfig: {},
     makers: [
