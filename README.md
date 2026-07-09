@@ -7,7 +7,9 @@
 <h3 align="center">Dexcom for macOS</h3>
 
   <p align="center">
-    View and monitor your Dexcom blood glucose readings on the computer. Credentials stay Keychain-encrypted.
+    View and monitor your Dexcom blood glucose readings on the computer.
+    <br />
+    Credentials stay Keychain-encrypted.
     <br />
     Not affiliated with Dexcom, Inc.
     <br />
