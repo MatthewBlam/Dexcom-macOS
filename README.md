@@ -14,6 +14,7 @@
     Not affiliated with Dexcom, Inc.
     <br />
     <br />
+    For monitoring purposes only, do not use for medical decisions.
     Download here: <a href="https://github.com/MatthewBlam/Dexcom-macOS/releases/tag/v1.0.0">v1.0.0</a>
   </p>
 </div>
